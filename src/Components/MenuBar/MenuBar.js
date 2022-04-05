@@ -1,7 +1,11 @@
+import userEvent from '@testing-library/user-event'
 import React from 'react'
+import { Button } from 'react-bootstrap-v5'
 import { Link } from 'react-router-dom'
+import useFirebase from '../hook/useFirebase'
 
 const MenuBar = () => {
+    const{user,logOut}=useFirebase();
   return (
     <div style={{display:"flex"}}>
         <div >
@@ -21,9 +25,18 @@ const MenuBar = () => {
                 <li style={{margin:"15px",listStyle:"none"}}>
                     <Link style={{textDecoration:"none"}} to="/register">Register</Link>
                 </li>
-                <li style={{margin:"15px",listStyle:"none"}}>
+                {user.email?
+                    <p>sign In :{user.displayName}</p>
+                }
+                
+                {
+                    user.email?
+                    <Button onClick={logOut}>LogOut</Button>
+                    :
+                    <li style={{margin:"15px",listStyle:"none"}}>
                     <Link style={{textDecoration:"none"}} to="/login">Login</Link>
                 </li>
+                }
                 
             </ul>
         </div>
