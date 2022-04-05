@@ -25,9 +25,9 @@ const MenuBar = () => {
                 <li style={{margin:"15px",listStyle:"none"}}>
                     <Link style={{textDecoration:"none"}} to="/register">Register</Link>
                 </li>
-                {user.email?
+                
                     <p>sign In :{user.displayName}</p>
-                }
+            
                 
                 {
                     user.email?
