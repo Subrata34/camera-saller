@@ -5,6 +5,8 @@ import Register from "./Components/Register/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import MenuBar from "./Components/MenuBar/MenuBar";
+import About from "./Components/About/About";
+import Service from "./Components/Service/Service";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="menubar" element={<MenuBar />} />
+          <Route path="about" element={<About />} />
+          <Route path="service" element={<Service />} />
         </Routes>
       </BrowserRouter>
       ,

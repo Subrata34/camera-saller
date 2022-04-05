@@ -1,10 +1,10 @@
 import React from "react";
-import './Banner.css'
+import './Banner.css';
 
 const Banner = () => {
   return (
     <div className="top-banner ">
-      <h1>Lets EXplore Together </h1>
+      <h1 style={{paddingTop:"150px"}}>Lets EXplore Together </h1>
     </div>
   );
 };

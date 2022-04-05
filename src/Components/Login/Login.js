@@ -1,9 +1,13 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap-v5";
+import Banner from "../Banner/Banner";
+import MenuBar from "../MenuBar/MenuBar";
 
 const Login = () => {
   return (
     <div>
+      <MenuBar></MenuBar>
+      <Banner></Banner>
       <h1>Please Login</h1>
       <Form>
         <Form.Group className="mb-3" style={{marginRight:"485px",marginLeft:"485px"}} controlId="formBasicEmail">

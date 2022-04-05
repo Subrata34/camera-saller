@@ -3,26 +3,26 @@ import { Link } from 'react-router-dom'
 
 const MenuBar = () => {
   return (
-    <div>
-        <div>
-            <h2>Food Order</h2>
+    <div style={{display:"flex"}}>
+        <div >
+            <h2>Online shop</h2>
         </div>
         <div>
-            <ul>
-                <li>
-                    <Link to="/home">Home</Link>
+            <ul style={{display:"flex",marginLeft:"500px"}}>
+                <li style={{margin:"15px",listStyle:"none"}}>
+                    <Link style={{textDecoration:"none"}} to="/home">Home</Link>
                 </li>
-                <li>
-                    <Link to="/about">About</Link>
+                <li style={{margin:"15px",listStyle:"none"}}>
+                    <Link style={{textDecoration:"none"}} to="/about">About</Link>
                 </li>
-                <li>
-                    <Link to="/service">Service</Link>
+                <li style={{margin:"15px",listStyle:"none"}}>
+                    <Link style={{textDecoration:"none"}} to="/service">Service</Link>
                 </li>
-                <li>
-                    <Link to="/register">Register</Link>
+                <li style={{margin:"15px",listStyle:"none"}}>
+                    <Link style={{textDecoration:"none"}} to="/register">Register</Link>
                 </li>
-                <li>
-                    <Link to="/login">Login</Link>
+                <li style={{margin:"15px",listStyle:"none"}}>
+                    <Link style={{textDecoration:"none"}} to="/login">Login</Link>
                 </li>
                 
             </ul>
