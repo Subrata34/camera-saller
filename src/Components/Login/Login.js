@@ -12,6 +12,9 @@ const Login = () => {
     const field=e.target.name;
     const value=e.target.value;
     console.log(field,value);
+    const newLoginData={...loginData};
+    newLoginData[field]=value;
+    setLoginData(newLoginData);
   }
   const handleLoginSubmit=e=>{
     e.preventDefault();
@@ -28,8 +31,8 @@ const Login = () => {
           style={{ marginRight: "485px", marginLeft: "485px" }}
           controlId="formBasicEmail"
         >
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" onChange={handleOnChange} name="name" placeholder="Enter email" />
+          <label style={{marginRight:"190px"}}>Email address:</label>
+          <Form.Control  type="email" onChange={handleOnChange} name="name" placeholder="Enter email" />
         </Form.Group>
 
         <Form.Group
@@ -41,7 +44,7 @@ const Login = () => {
           }}
           controlId="formBasicPassword"
         >
-          <Form.Label>Password</Form.Label>
+          <Form.Label style={{marginRight:"220px"}}>Password</Form.Label>
           <Form.Control type="password" onChange={handleOnChange} name="password" placeholder="Password" />
         </Form.Group>
         <Button style={{ width: "300px" }} variant="primary" type="submit">
