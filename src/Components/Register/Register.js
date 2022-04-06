@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap-v5";
 import { Link } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import MenuBar from "../MenuBar/MenuBar";
+import useAuth from "../hook/useAuth";
 
 const Register = () => {
   const[loginData,setLoginData]=useState({});
+  const{registerUser}=useAuth()
   const handleOnChange=e=>{
     const field=e.target.name;
     const value=e.target.value;
@@ -14,12 +16,14 @@ const Register = () => {
     newLoginData[field]=value;
     setLoginData(newLoginData);
   }
-  const handleLoginChange=e=>{
+  const handleLoginChange=e=>{ 
+    e.preventDefault();
     if(loginData.password!==loginData.password2){
       alert('Your password is not match');
       return ;
     }
-    e.preventDefault();
+    registerUser(loginData.email,loginData.password);
+   
   }
   return (
     <div>
