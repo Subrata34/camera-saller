@@ -26,7 +26,7 @@ const MenuBar = () => {
                     <Link style={{textDecoration:"none"}} to="/register">Register</Link>
                 </li>
                 
-                    <p>sign In :{user.displayName}</p>
+                  {user.email&&<p>sign In :{user.displayName}</p> }  
             
                 
                 {

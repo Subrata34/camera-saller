@@ -7,11 +7,14 @@ import Home from "./Components/Home/Home";
 import MenuBar from "./Components/MenuBar/MenuBar";
 import About from "./Components/About/About";
 import Service from "./Components/Service/Service";
+import AuthProvider from "./Components/hook/AuthProvider";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+     <AuthProvider>
+     <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
@@ -19,10 +22,11 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="menubar" element={<MenuBar />} />
           <Route path="about" element={<About />} />
-          <Route path="service" element={<Service />} />
+          <Route path="service" element={<PrivateRoute> <Service /> </PrivateRoute>} />
         </Routes>
       </BrowserRouter>
-      ,
+     </AuthProvider>
+      
     </div>
   );
 }
